@@ -7,17 +7,39 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+    return const MaterialApp(
+      title: 'Mi app',
+      home:Inicio(),
+    );
+  }
+}
+class Inicio extends StatefulWidget {
+  const Inicio({super.key});
+
+  @override
+  State<Inicio> createState() => _InicioState();
+}
+
+class _InicioState extends State<Inicio> {
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text("Catalogo Peliculas"),
       ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              width: 350.0,
+              height: 250.0,
+              child: Image.asset('catalogo_peliculas/assets/imagen.jpg'),
+              ),
+              Container(
+                child: const Text("Bienvenido al catalogo de peliculas"),
+              )
+          ]),
+      )
     );
   }
 }
